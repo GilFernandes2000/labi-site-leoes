@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Distribuição Geografica</title>
+    <meta name="Description"content="Este site fala sobre leões">
+    <meta name="keywords"content="projeto, leões, vida selvagem">
+    <meta http-equiv="author"content="João Gil-nmec:93460 e Leandro Rito-nmec:92975">
+    <meta http-equiv="content-language"content="pt-pt">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+    <style>
+        h1{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color:rgb(0, 0, 0);
+        margin-left:150px;
+        font-size: 500%;
+        }
+        p{       
+        color:rgb(0, 0, 0);
+        text-align: left;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left:150px;
+        margin-right: 150px;
+        }
+        body{
+            background-image: url("savana.jpg");
+            background-size: cover;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #img{
+            margin-left: 150px;
+            width: 350px;
+            height: 250px;
+        }
+
+    </style>
+        
+</head>
+
+<body>
+        <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">Leões</a>
+                  </div>
+                  <ul class="nav navbar-nav">
+                    <li><a href="Pagina inicial.html">Home</a></li>
+                     <li><a href="Biografia.html">Biografia</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Características <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="Etimologia.html">Etimologia</a></li>
+                        <li><a href="Taxonomia.html">Taxonomia</a></li>
+                        <li><a href="Fisionomia.html">Fisionomia</a></li> 
+                      </ul>
+                    </li>
+                    <li><a href="subespécies.html">Subespécies</a></li>
+                    <li class="active"><a href="Distribuição geografica.html">Distribuição Geografica</a></li>
+                    <li><a href="Antepassados.html">Antepassados</a></li>
+                    <li><a href="Comportamento social.html">Comportamento Social</a></li>
+                    <li><a href="dieta alimentar.html">Dieta Alimentar</a></li>
+                    <li><a href="Reprodução.html">Reprodução</a></li>
+                    <li><a href="about.html">About</a></li>
+                  </ul>
+                </div>
+              </nav>
+              <h1>Distribuição Geografica</h1>
+              <div id="container" style="min-width: 310px; height: 400px; margin-left: 150px; margin-right: 150px; margin-top: 150px">
+                <script>
+                  Highcharts.chart('container', {
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: 'População estimada de Leões em Africa em 2001/2002'
+                    },
+                    subtitle: {
+                        text: '<a href="http://www.rocal-lion.org/documents/french/ALD_fr.pdf" target="_blank">Source</a>'
+                    },
+                    xAxis: {
+                        type: 'category'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Número de Leões'
+                        }
+
+                    },
+                    legend: {
+                        enabled: true
+                    },
+                    plotOptions: {
+                        series: {
+                            borderWidth: 0,
+                            dataLabels: {
+                                enabled: true,
+                                format: '{point.y:.f}'
+                            }
+                        }
+                    },
+
+                    tooltip: {
+                        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.f}</b><br/>'
+                    },
+
+                    "series":[
+                      {
+                        "name": "Nº de Leões",
+                        
+                        "colorByPoint": true,
+                        "data":[
+                          {
+                            "name": "África do Norte",
+                            "y": 0,
+                            "drilldown": null
+                          },
+                          {
+                            "name": "Oeste de África",
+                            "y": 850,
+                            "drilldown": "Oeste de África"
+                          },
+                          {
+                            "name": "África Central",
+                            "y": 950,
+                            "drilldown": "África Central"
+                          },
+                          {
+                            "name": "Este de África",
+                            "y": 11000,
+                            "drilldown": "Este de África"
+                          },
+                          {
+                            "name": "Sul de África",
+                            "y": 10000,
+                            "drilldown": "Sul de África"
+                          },
+                        ]
+                      }
+                    ],
+                    "drilldown":{
+                      "series":[
+                        {
+                          "name": "Oeste de África",
+                          "id": "Oeste de África",
+                          "colorByPoint": true,
+                          "data": [
+                            [
+                              "Benin",
+                              65
+                            ],
+                            [
+                              "Burkina Faso",
+                              100
+                            ],
+                            [
+                              "Costa de Marfim",
+                              30
+                            ],
+                            [
+                              "Gana",
+                              30
+                            ],
+                            [
+                              "Guiné",
+                              230
+                            ],
+                            [
+                              "Mali",
+                              50
+                            ],
+                            [
+                              "Níger",
+                              70
+                            ],
+                            [
+                              "Nigéria",
+                              200
+                            ],
+                            [
+                              "Senegal",
+                              60
+                            ],
+                          ]
+                        },
+                        {
+                          "name": "África Central",
+                          "id": "África Central",
+                          "colorByPoint": true,
+                          "data": [
+                            [
+                              "Camarões",
+                              260
+                            ],
+                            [
+                              "Central",
+                              300
+                            ],
+                            [
+                              "República do Chade",
+                              150
+                            ],
+                            [
+                              "República do Congo",
+                              240
+                            ],
+                          ]
+                        },
+                        {
+                          "name": "Este de África",
+                          "id": "Este de África",
+                          "colorByPoint": true,
+                          "data": [
+                            [
+                              "Etiópia",
+                              900
+                            ],
+                            [
+                              "Kénia",
+                              2450
+                            ],
+                            [
+                              "Ruanda",
+                              25
+                            ],
+                            [
+                              "Tanzânia",
+                              7073
+                            ],
+                            [
+                              "Uganda",
+                              575
+                            ],
+                          ]
+                        },
+                        {
+                          "name": "Sul de África",
+                          "id": "Sul de África",
+                          "colorByPoint": true,
+                          "data": [
+                            [
+                              "Angola",
+                              450
+                            ],
+                            [
+                              "Botswana",
+                              2918
+                            ],
+                            [
+                              "Moçambique",
+                              400
+                            ],
+                            [
+                              "Namíbia",
+                              910
+                            ],
+                            [
+                              "África do Sul",
+                              2716
+                            ],
+                            [
+                              "Suazilândia",
+                              15
+                            ],
+                            [
+                              "Zâmbia",
+                              1500
+                            ],
+                            [
+                              "Zimbabue",
+                              1037
+                            ],
+                          ]
+                        }
+                      ]
+                    }
+                  });    
+                </script>
+              </div>
+</body>
+</html>
